@@ -19,17 +19,19 @@ sisenseFrame.render().then(() => {
   console.log("Sisense iFrame ready!");
 });
 
-function createWidget() {
-    const widgetFrame = new SisenseFrame({
-        url: 'https://tams.sisensepoc.com',
-        dashboard: '63c02028d54e7100352b0e8d',
-        settings: {
-            showToolbar: false,
-        },
-        element: wEle
-    });
+const widgetFrame = new SisenseFrame({
+    url: 'https://tams.sisensepoc.com',
+    dashboard: '63c02028d54e7100352b0e8d',
+    settings: {
+        showToolbar: false,
+    },
+    element: wEle
+});
 
-    widgetFrame.render()
+widgetFrame.render()
+
+
+function createWidget() {
 
     widgetFrame.dashboard.createWidget()
 
