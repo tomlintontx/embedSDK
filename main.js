@@ -12,7 +12,8 @@ const sisenseFrame = new SisenseFrame({
         showToolbar: false,
         showRightPane: false,
     },
-    element: ele
+    element: ele,
+    edit: true
 });
 
 sisenseFrame.render().then(() => {
