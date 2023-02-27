@@ -7,10 +7,10 @@ const wEle = document.getElementById('widgetFrame');
 const sisenseFrame = new SisenseFrame({
     url: 'https://tams.sisensepoc.com',
     dashboard: '63c02028d54e7100352b0e8d',
-    widget: 'new?datasource=New%20Jira&type=chart%2Fline',
     settings: {
         showLeftPane: true,
         showToolbar: true,
+        showHeader: true,
         showRightPane: false,
     },
     element: ele,
@@ -38,13 +38,19 @@ widgetFrame.render().then(() => {
 
 function createWidget() {
 
-    sisenseFrame.hide()
+    const widgetFrame = new SisenseFrame({
+        url: 'https://tams.sisensepoc.com',
+        dashboard: '63c02028d54e7100352b0e8d',
+        settings: {
+            showToolbar: true,
+        },
+        element: wEle,
+        editMode: true
+    });
+    
+    widgetFrame.render().then(() => {
+      wEle.src = 'https://tams.sisensepoc.com/app/main/dashboards/63c02028d54e7100352b0e8d/widgets/new?datasource=New%20Jira&type=chart%2Fline';
+    });
 
-    widgetFrame.dashboard.createWidget()
 
-
-}
-
-function showWidget () {
-    sisenseFrame.render()
 }
