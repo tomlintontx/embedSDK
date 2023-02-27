@@ -29,7 +29,9 @@ function createWidget() {
         element: wEle
     });
 
+    widgetFrame.render(null,true)
+
     widgetFrame.dashboard.createWidget()
 
-    widgetFrame.render(null,true)
+
 }
