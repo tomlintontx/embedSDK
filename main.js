@@ -9,7 +9,7 @@ const sisenseFrame = new SisenseFrame({
     dashboard: '63c02028d54e7100352b0e8d',
     settings: {
         showLeftPane: true,
-        showToolbar: true,
+        showToolbar: false,
         showRightPane: false,
     },
     element: ele,
@@ -20,8 +20,30 @@ sisenseFrame.render().then(() => {
   console.log("Sisense iFrame ready!");
 });
 
+const widgetFrame = new SisenseFrame({
+    url: 'https://tams.sisensepoc.com',
+    dashboard: '63c02028d54e7100352b0e8d',
+    settings: {
+        showToolbar: false,
+    },
+    element: wEle,
+    editMode: true
+});
+
+widgetFrame.render().then(() => {
+  console.log("Sisense iFrame ready!");
+});
+
+
 function createWidget() {
 
-    wEle.style.display = 'block'
+    ele.style.display = 'none'
+
+    widgetFrame.dashboard.hide()
+
+    widgetFrame.dashboard.show()
+
+    widgetFrame.dashboard.createWidget()
+
 
 }
