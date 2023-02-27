@@ -37,12 +37,6 @@ widgetFrame.render().then(() => {
 
 function createWidget() {
 
-    ele.style.display = 'none'
-
-    widgetFrame.dashboard.hide()
-
-    widgetFrame.dashboard.show()
-
     widgetFrame.dashboard.createWidget()
 
 
