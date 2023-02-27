@@ -41,6 +41,6 @@ function createWidget() {
 
     sisenseFrame.hide()
 
-    wEle.show()
+    widgetFrame.show()
 
 }
