@@ -7,10 +7,10 @@ const wEle = document.getElementById('widgetFrame');
 const sisenseFrame = new SisenseFrame({
     url: 'https://tams.sisensepoc.com',
     dashboard: '63c02028d54e7100352b0e8d',
-    widget: 'new',
+    widget: 'new?datasource=New%20Jira&type=chart%2Fline',
     settings: {
         showLeftPane: true,
-        showToolbar: false,
+        showToolbar: true,
         showRightPane: false,
     },
     element: ele,
