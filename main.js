@@ -37,10 +37,11 @@ function createWidget() {
     
     widgetFrame.render(null, true).then(() => {
       wEle.src = 'https://tams.sisensepoc.com/app/main/dashboards/63c02028d54e7100352b0e8d/widgets/new?datasource=New%20Jira&type=chart%2Fline';
+      widgetFrame.show()
     });
 
     sisenseFrame.hide()
 
-    widgetFrame.show()
+
 
 }
