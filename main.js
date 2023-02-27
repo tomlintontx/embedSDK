@@ -21,24 +21,26 @@ sisenseFrame.render().then(() => {
   console.log("Sisense iFrame ready!");
 });
 
-const widgetFrame = new SisenseFrame({
-    url: 'https://tams.sisensepoc.com',
-    dashboard: '63c02028d54e7100352b0e8d',
-    settings: {
-        showToolbar: true,
-    },
-    element: wEle,
-    editMode: true
-});
 
 
 function createWidget() {
 
-
+    const widgetFrame = new SisenseFrame({
+        url: 'https://tams.sisensepoc.com',
+        dashboard: '63c02028d54e7100352b0e8d',
+        settings: {
+            showToolbar: true,
+        },
+        element: wEle,
+        editMode: true
+    });
     
-    widgetFrame.render(null, true).then(() => {
+    widgetFrame.render().then(() => {
       wEle.src = 'https://tams.sisensepoc.com/app/main/dashboards/63c02028d54e7100352b0e8d/widgets/new?datasource=New%20Jira&type=chart%2Fline';
     });
 
+    ele.style.display = 'none';
+
+    wEle.style.display = 'block';
 
 }
