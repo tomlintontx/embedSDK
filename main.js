@@ -37,7 +37,13 @@ widgetFrame.render().then(() => {
 
 function createWidget() {
 
+    sisenseFrame.hide()
+
     widgetFrame.dashboard.createWidget()
 
 
+}
+
+function showWidget () {
+    sisenseFrame.render()
 }
