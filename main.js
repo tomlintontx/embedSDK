@@ -28,7 +28,9 @@ const widgetFrame = new SisenseFrame({
     element: wEle
 });
 
-widgetFrame.render()
+widgetFrame.render().then(() => {
+  console.log("Sisense iFrame ready!");
+});
 
 
 function createWidget() {
