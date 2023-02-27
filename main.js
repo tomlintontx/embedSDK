@@ -13,7 +13,7 @@ const sisenseFrame = new SisenseFrame({
         showRightPane: false,
     },
     element: ele,
-    edit: true
+    editMode: true
 });
 
 sisenseFrame.render().then(() => {
