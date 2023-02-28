@@ -18,7 +18,15 @@ const sisenseFrame = new SisenseFrame({
 });
 
 sisenseFrame.render().then(() => {
-  console.log("Sisense iFrame ready!");
+    console.log("Sisense iFrame ready!");
+
+    Object.keys(enums.WidgetEventType).forEach((key) => {
+        sisenseFrame.widget.on(enums.WidgetEventType[key], (s, e) => console.log(s,e))
+    });
+
+    Object.keys(enums.DashboardEventType).forEach((key) => {
+        sisenseFrame.dashboard.on(enums.DashboardEventType[key], (s, e) => console.log(s,e))
+    });
 });
 
 
