@@ -36,6 +36,14 @@ function createWidget() {
 
 }
 
-sisenseFrame.widget.on(enums.WidgetEventType.UNLOADED, () => h.innerHTML = 'Dashboard Context')
+sisenseFrame.widget.on(enums.WidgetEventType.UNLOADED, () => {
+    h.innerHTML = 'Dashboard Context'
+    let frame = document.getElementsByTagName('iframe');
+    frame[0].style.height = '200px'
+})
 
-sisenseFrame.widget.on(enums.WidgetEventType.LOADED, () => h.innerHTML = 'Widget Context')
+sisenseFrame.widget.on(enums.WidgetEventType.LOADED, () => {
+    h.innerHTML = 'Widget Context'
+    let frame = document.getElementsByTagName('iframe');
+    frame[0].style.height = '100vh'
+})
