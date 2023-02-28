@@ -2,7 +2,6 @@
 const { SisenseFrame, enums } = window['sisense.embed'];
 
 const ele = document.getElementById('sisenseFrame');
-const wEle = document.getElementById('widgetFrame');
 let h = document.getElementById('header');
 
 const sisenseFrame = new SisenseFrame({
