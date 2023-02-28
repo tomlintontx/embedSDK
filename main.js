@@ -35,10 +35,8 @@ function createWidget() {
 
     sisenseFrame.dashboard.createWidget();
 
-
-
-    h.innerHTML = 'Widget Context'
-
 }
 
 sisenseFrame.widget.on(enums.WidgetEventType.UNLOADED, () => h.innerHTML = 'Dashboard Context')
+
+sisenseFrame.widget.on(enums.WidgetEventType.LOADED, () => h.innerHTML = 'Widget Context')
