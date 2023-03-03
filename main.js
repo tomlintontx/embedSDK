@@ -39,7 +39,7 @@ function createWidget() {
 sisenseFrame.widget.on(enums.WidgetEventType.UNLOADED, () => {
     h.innerHTML = 'Dashboard Context'
     let frame = document.getElementsByTagName('iframe');
-    frame[0].style.height = '200px'
+    frame[0].style.height = '450px'
 })
 
 sisenseFrame.widget.on(enums.WidgetEventType.LOADED, () => {
