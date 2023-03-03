@@ -8,8 +8,8 @@ const sisenseFrame = new SisenseFrame({
     url: 'https://tams.sisensepoc.com',
     dashboard: '63c02028d54e7100352b0e8d',
     settings: {
-        showLeftPane: false,
-        showToolbar: false,
+        showLeftPane: true,
+        showToolbar: true,
         showHeader: false,
         showRightPane: true,
     },
