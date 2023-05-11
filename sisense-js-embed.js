@@ -11,18 +11,18 @@ let config = {
 
 //connect to sisense on loading of this JS file
 
-(() => {
+(async () => {
 
     try {
-        Sisense.connect(mySisenseApp.settings.server)
-        .then(loadWidget);
+        let sisense = await Sisense.connect(mySisenseApp.settings.server);
+        loadWidget;
     } catch (err){
         console.log("Error: Failed connecting to the Sisense server");
     }
 
 })();
 
-let loadWidget = (app) => {
+let loadWidget = async (app) => {
 
     config.app = app;
 
@@ -40,10 +40,10 @@ let loadWidget = (app) => {
 
     })
 
-    Promise.all(promises)
-        .then(() => {
-            dash.refresh()
-        });
+    await Promise.allSettled(promises)
+
+    dash.refresh()
+
         
 
 }
