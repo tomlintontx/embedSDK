@@ -22,8 +22,8 @@ let config = {
 
     tag.onload = async () => {
         try {
-            let sisense = await Sisense.connect(config.settings.baseURL);
-            loadWidget;
+            let app = await Sisense.connect(config.settings.baseURL);
+            loadWidget(app);
         } catch (err){
             console.log(err);
         }
