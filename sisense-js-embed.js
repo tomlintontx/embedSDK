@@ -25,10 +25,10 @@ let config = {
             let sisense = await Sisense.connect(mySisenseApp.settings.server);
             loadWidget;
         } catch (err){
-            console.log("Error: Failed connecting to the Sisense server");
+            console.log(err);
         }
     }
-    
+
     document.head.append(tag)
 
 })();
