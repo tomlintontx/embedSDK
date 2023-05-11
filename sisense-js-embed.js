@@ -7,18 +7,29 @@ let config = {
     },
     dashboard: null,
     filters: {}
-}
+};
 
 //connect to sisense on loading of this JS file
 
 (async () => {
 
-    try {
-        let sisense = await Sisense.connect(mySisenseApp.settings.server);
-        loadWidget;
-    } catch (err){
-        console.log("Error: Failed connecting to the Sisense server");
+    /** @type {HTMLLinkElement} */
+    let ele = document.getElementById('sisense-preload')
+
+    let tag = document.createElement('script');
+
+    tag.src = ele.href
+
+    tag.onload = async () => {
+        try {
+            let sisense = await Sisense.connect(mySisenseApp.settings.server);
+            loadWidget;
+        } catch (err){
+            console.log("Error: Failed connecting to the Sisense server");
+        }
     }
+    
+    document.head.append(tag)
 
 })();
 
