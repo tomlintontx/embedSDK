@@ -22,7 +22,7 @@ let config = {
 
     tag.onload = async () => {
         try {
-            let sisense = await Sisense.connect(mySisenseApp.settings.server);
+            let sisense = await Sisense.connect(config.settings.baseURL);
             loadWidget;
         } catch (err){
             console.log(err);
